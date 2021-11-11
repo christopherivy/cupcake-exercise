@@ -18,9 +18,21 @@ class Cupcake(db.Model):
     rating = db.Column(db.Float, nullable=False)
     image = db.Column(db.Text, nullable=False, default=DEFAULT_IMAGE)
 
+    def serialize(self):
+        """return a dict representation of todo which we can turn in json"""
+        s = self
+        return {
+            "id": s.id,
+            "flavor": s.flavor,
+            "size": s.size,
+            "rating": s.rating,
+            "image": s.image,
+        }
+
 
 def connect_db(app):
     """Connect to database."""
 
     db.app = app
     db.init_app(app)
+    return app

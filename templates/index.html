@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cupcake Page</title>
+</head>
+
+<body>
+
+    <h1>Im a little cupcake!!</h1>
+
+    <div class="row justify-conent-center">
+        <div class="col-6">
+            <ul class="list-group">
+                {% for cupcake in cupcakes %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">{{cupcake.flavor}}</li>
+                {{cupcakes.flavor}}
+
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
